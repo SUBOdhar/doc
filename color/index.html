@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .rainbow-text::before {
+      content: attr(data-text);
+      display: inline-block;
+      color: transparent;
+      background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body>
+  <p class="rainbow-text" data-text="Hello"></p>
+</body>
+</html>
