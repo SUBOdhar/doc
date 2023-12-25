@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       display: flex;
@@ -36,6 +37,12 @@
       background: linear-gradient(to right, #ff6464, #ffda61, #a8eb12, #22c1c3, #7950f2);
       -webkit-background-clip: text;
       background-clip: text;
+      animation: rainbowAnimation 2s infinite;
+    }
+
+    @keyframes rainbowAnimation {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
     .copy-button {
@@ -52,12 +59,28 @@
     .copy-button:hover {
       background-color: #5c3aff;
     }
+
+    .icon {
+      margin-right: 8px;
+      color: #7950f2;
+    }
+
+    .description {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    <p class="description">
+      Experience the vibrant rainbow text effect using the Poppins font and CSS animations. The text animates through a spectrum of colors, creating an eye-catching display. Copy the CSS code with the click of a button.
+    </p>
     <div class="rainbow-text" data-text="Hello"></div>
-    <button class="copy-button" onclick="copyCSS()">Copy CSS</button>
+    <button class="copy-button" onclick="copyCSS()">
+      <i class="icon fas fa-copy"></i> Copy CSS
+    </button>
   </div>
 
   <script>
