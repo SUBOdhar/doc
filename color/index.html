@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    .rainbow-text::before {
-      content: attr(data-text);
-      display: inline-block;
-      color: transparent;
-      background-image: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
+    .rainbow-text span:nth-child(1) { color: red; }
+    .rainbow-text span:nth-child(2) { color: orange; }
+    .rainbow-text span:nth-child(3) { color: yellow; }
+    .rainbow-text span:nth-child(4) { color: green; }
+    .rainbow-text span:nth-child(5) { color: blue; }
   </style>
 </head>
 <body>
-  <p class="rainbow-text" data-text="Hello"></p>
+  <div class="rainbow-text">
+    <span>H</span>
+    <span>e</span>
+    <span>l</span>
+    <span>l</span>
+    <span>o</span>
+  </div>
 </body>
 </html>
