@@ -1,0 +1,117 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+  * {
+      font-family: 'Poppins', sans-serif;
+  }
+
+  .topnav {
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #333;
+      align-items: center;
+      padding: 10px;
+      display: flex;
+  }
+
+  .topnav a:first-child img {
+      padding-right: 5px;
+  }
+
+  .topnav a {
+      cursor: default;
+  }
+
+  .topnav a:not(:first-child) {
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      margin-top: 5px;
+      margin-right: 5px;
+  }
+
+  .topnav a:hover:not(:first-child) {
+      background-color: #ddd;
+      color: black;
+      border-radius: 5px;
+  }
+
+  .topnav a:nth-child(3) {
+      background-color: #ddd;
+      color: black;
+      border-radius: 5px;
+  }
+
+
+  @media screen and (max-width: 600px) {
+      .topnav a:nth-child(n+4) {
+          display: none;
+      }
+
+      .topnav {
+          font-size: medium;
+      }
+
+      .topnav a:not(:first-child) {
+          margin-top: 0px;
+      }
+
+  }
+
+  .about-content {
+      width: 100%;
+  }
+
+  .text {
+      width: 1130px;
+      max-width: 85%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+  }
+
+  .head h2 {
+      font-size: 90px;
+      font-weight: 600;
+      margin-bottom: 10px;
+  }
+
+  .content {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 20px;
+  }
+
+  .image img {
+      border-radius: 20px;
+      margin-top: 10vh;
+  }
+
+  .text1 {
+      width: 540px;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 1px;
+  }
+
+  .button button {
+      font-size: 18px;
+      background: #4070f4;
+      color: #fff;
+      text-decoration: none;
+      border: none;
+      padding: 8px 25px;
+      border-radius: 6px;
+      transition: 0.5s;
+  }
+
+  .button button:hover {
+      background: #000;
+  }
+
+  .button {
+      margin-top: 30px;
+  }
