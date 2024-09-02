@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Recap - [Year]</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #3a3d5c, #24243e);
+            color: #ffffff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh;
+        }
+
+        /* Container for content */
+        .container {
+            padding: 20px;
+            max-width: 1400px;
+            width: 100%;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        /* Title */
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+            font-weight: 600;
+        }
+
+        /* Background Shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.5;
+            animation: move 30s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            background-color: #6c63ff;
+            top: -200px;
+            right: -300px;
+        }
+
+        .shape:nth-child(2) {
+            width: 600px;
+            height: 600px;
+            background-color: #ff6f61;
+            bottom: -250px;
+            left: -350px;
+        }
+
+        .shape:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            background-color: #32e0c4;
+            top: 300px;
+            left: 150px;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+
+            50% {
+                transform: translateY(-30px) translateX(30px);
+            }
+
+            100% {
+                transform: translateY(0) translateX(0);
+            }
+        }
+
+        /* Project List */
+        .project-list {
+            z-index: 2;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+
+        }
+
+        /* Individual Project Cards */
+        .project {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transform: translateY(0);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .project::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: rgba(255, 255, 255, 0.05);
+            top: -75%;
+            left: -75%;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+
+        .project h2 {
+            margin: 0 0 10px;
+            font-size: 2em;
+            color: #ffffff;
+            z-index: 2;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .project p {
+            margin: 10px 0;
+            z-index: 2;
+            position: relative;
+            font-size: 1em;
+        }
+
+        /* Status Dots */
+        .status-dot {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .status-dot.completed {
+            background-color: #4CAF50;
+        }
+
+        /* Green for Completed */
+        .status-dot.in-progress {
+            background-color: #FFC107;
+        }
+
+        /* Yellow for In Progress */
+        .status-dot.pending {
+            background-color: #F44336;
+        }
+
+        /* Red for Pending */
+
+        /* Responsive Design */
+        @media (min-width: 1600px) {
+            h1 {
+                font-size: 3.5em;
+            }
+
+            .project h2 {
+                font-size: 2.2em;
+            }
+
+            .project {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .project {
+                padding: 20px;
+            }
+
+            .project h2 {
+                font-size: 1.8em;
+            }
+
+            .status-dot {
+                width: 12px;
+                height: 12px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .project {
+                padding: 15px;
+            }
+
+            .project h2 {
+                font-size: 1.5em;
+            }
+
+            .status-dot {
+                width: 10px;
+                height: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Shapes -->
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+
+    <div class="container">
+        <h1>Project Recap - [Year]</h1>
+
+        <div class="project-list">
+            <div class="project">
+                <span class="status-dot completed"></span>
+                <h2>Project Title 1</h2>
+                <p><strong>Description:</strong> A brief description of the project.</p>
+            </div>
+
+            <div class="project">
+                <span class="status-dot in-progress"></span>
+                <h2>Project Title 2</h2>
+                <p><strong>Description:</strong> A brief description of the project.</p>
+            </div>
+
+            <div class="project">
+                <span class="status-dot pending"></span>
+                <h2>Project Title 3</h2>
+                <p><strong>Description:</strong> A brief description of the project.</p>
+            </div>
+
+            <!-- Add more projects as needed -->
+        </div>
+    </div>
+
+</body>
+
+</html>
